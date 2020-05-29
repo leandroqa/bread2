@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Product;
+
 class ProductController extends Controller
 {
     public function index()
-    {        
-        return response()->json('List of Products!',200);
+    {     
+        $products = Product::where('status','A')
+             ->orderBy('name','ASC')
+             ->get();        
+        return response()->json(['products' => $products], 200);        
     }
 }
