@@ -12,7 +12,7 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        Product::truncate();
-        factory(Product::class,3);
+        //Product::truncate();
+        factory(Product::class,3)->create();
     }
 }
