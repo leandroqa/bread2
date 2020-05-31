@@ -1,0 +1,25 @@
+language: php
+
+php:
+  - "7.3"
+node:
+  - "12.17.0"
+
+before_script:
+  - cp .env.travis .env
+  - mysql -e 'create database bread_test;'
+  - composer update
+  - composer install --no-interaction  
+  - php artisan migrate
+  - npm install
+  - npm run dev
+  #- php artisan db:seed
+
+script:
+  #- vendor/bin/phpunit
+  - php artisan test
+
+branches:
+  only:
+  - master
+  - stable
