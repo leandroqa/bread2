@@ -7,9 +7,11 @@ node:
 services:
   - mysql
 
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS bread_test;'  
+
 before_script:
-  - cp .env.travis .env
-  - mysql -e 'create database bread_test;'
+  - cp .env.travis .env  
   - composer update
   - composer install --no-interaction  
   - php artisan migrate
