@@ -10,4 +10,10 @@ _php artisan migrate_
 
 _php artisan db:seed_
 
-_php artisan migrate --database=mysql_testing_
+
+# About this version
+
+**0.1.0**
+
+Project under development.
+Currently, only the product list is available.
