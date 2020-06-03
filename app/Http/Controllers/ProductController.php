@@ -13,6 +13,6 @@ class ProductController extends Controller
         $products = Product::where('status','A')
              ->orderBy('name','ASC')
              ->get();        
-        return response()->json(['products' => $products], 200);        
+        return $products->toJson();
     }
 }

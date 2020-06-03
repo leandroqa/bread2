@@ -24,6 +24,6 @@ $factory->define(Product::class, function (Faker $faker) {
         'name' => $productNames[array_rand($productNames,1)],
         'description' => $faker->text,
         'price' => (float) $result = rand(1,25).".".rand(0,9).rand(0,9),        
-        //'pic' => $faker->image(public_path('images'), "120", "85", "food", false)        
+        'pic' => $faker->image(public_path('images'), "250", "160", "food", false)        
     ];
 });
