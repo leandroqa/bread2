@@ -1,6 +1,6 @@
 // resources/assets/js/components/ProductList.js
 
-//import axios from 'axios'
+import axios from 'axios'
 import React, { Component } from 'react'
 import ProductCard from './ProductCard'
 
@@ -12,16 +12,16 @@ class ProductList extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     axios.get('/api/produtos').then(response => {
-    //         this.setState({
-    //             products: response.data
-    //         })
-    //     })
-    // }
+    componentDidMount() {
+        axios.get('/api/produtos').then(response => {
+            this.setState({
+                products: response.data
+            })
+        })
+    }
 
     render() {
-        //const { products } = this.state
+        const { products } = this.state
         return (
             <div className='container py-4'>
                 <div className='row justify-content-center'>
