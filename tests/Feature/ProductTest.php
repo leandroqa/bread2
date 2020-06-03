@@ -6,16 +6,11 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Product;
-//use ProductSeeder;
 
 class ProductTest extends TestCase
 {
     use RefreshDatabase;
 
-    // public function setUp() : void
-    // {
-    //     //
-    // }
 
     public function testNeedToConnectToDBandListAllItems()
     {        
@@ -27,7 +22,7 @@ class ProductTest extends TestCase
 
         $content = $this->get(route('products.index'))->getContent();
         $json_arr = json_decode($content,true);
-        $this->assertCount(3, $json_arr['products']);
+        $this->assertCount(3, $json_arr);
     }
     
 }

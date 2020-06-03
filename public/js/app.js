@@ -70652,12 +70652,12 @@ var ProductList = /*#__PURE__*/function (_Component) {
         className: "row justify-content-center"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "Produtos")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row justify-content-center"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ProductCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        productName: "Product A",
-        productImage: "images/3b4142b6ebbb638e4dff3756c20923c4.jpg"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ProductCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        productName: "Product B",
-        productImage: "images/93024fd192a918ac0ddb9c2e398577ed.jpg"
+      }, products.map(function (product) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ProductCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          key: product.id,
+          productName: product.name,
+          productImage: "images/".concat(product.pic)
+        });
       })));
     }
   }]);
