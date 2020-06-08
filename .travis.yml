@@ -2,6 +2,8 @@ dist: bionic
 language: php
 php:
   - 7.3
+node_js:
+  - 10.20.1
 services:
   - mysql
 cache:
@@ -16,5 +18,7 @@ before_script:
   - composer install --prefer-source --no-interaction --dev
   - php artisan key:generate
   - php artisan migrate
+  - npm install
 script:
   - php artisan test
+  - npm test
