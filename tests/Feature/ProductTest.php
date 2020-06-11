@@ -24,5 +24,21 @@ class ProductTest extends TestCase
         $json_arr = json_decode($content,true);
         $this->assertCount(3, $json_arr);
     }
+
+    public function testValidateData()
+    {
+        //validate the fields
+        //test valid and invalid data
+        $this->assertTrue(true);
+    }
+
+    public function testCanIStoreData()
+    {
+        //validate the fields
+        //store some data
+        $this->assertTrue(true);
+    }
+
+
     
 }

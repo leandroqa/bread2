@@ -26,3 +26,4 @@ use Illuminate\Support\Facades\Route;
 // Route::put('tasks/{task}', 'TaskController@markAsCompleted');
 
 Route::get('produtos','ProductController@index')->name('products.index');
+Route::post('produtos/gravar', 'ProductController@store')->name('products.store');
