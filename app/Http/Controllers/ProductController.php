@@ -9,13 +9,6 @@ use App\Product;
 class ProductController extends Controller
 {
 
-    // private $product;
-
-    // public function __constructor()
-    // {
-
-    // }
-
     public function index()
     {     
         $products = Product::where('status','A')
@@ -24,12 +17,34 @@ class ProductController extends Controller
         return $products->toJson();
     }
 
-    //recieve a post array data
-    public function store()
+    public function show(Product $product)
     {
-        //need to validate fields
-        //if valid store it
-        return 1;
+        return response()->json($product,200);
     }
 
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => ['required', 'max:50'],
+            'price' => ['required','numeric']
+        ]);
+        $product = Product::create($request->all());
+        return response()->json($product, 201);       
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $validatedData = $request->validate([
+            'name' => ['required', 'max:50'],
+            'price' => ['required','numeric']
+        ]);
+        $product->update($request->all());
+        return response()->json($product, 200);
+    }
+
+    public function delete(Product $product)
+    {
+        $product->delete();
+        return response()->json(null, 204);
+    }
 }

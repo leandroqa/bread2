@@ -18,12 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-// Route::get('projects', 'ProjectController@index');
-// Route::post('projects', 'ProjectController@store');
-// Route::get('projects/{id}', 'ProjectController@show');
-// Route::put('projects/{project}', 'ProjectController@markAsCompleted');
-// Route::post('tasks', 'TaskController@store');
-// Route::put('tasks/{task}', 'TaskController@markAsCompleted');
 
 Route::get('produtos','ProductController@index')->name('products.index');
+Route::get('produtos/{product}', 'ProductController@show')->name('products.show');
 Route::post('produtos/gravar', 'ProductController@store')->name('products.store');
+Route::put('produtos/{product}', 'ProductController@update')->name('products.update');
+Route::delete('produtos/{product}', 'ProductController@delete')->name('products.delete');
