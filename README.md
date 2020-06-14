@@ -10,10 +10,14 @@ _php artisan migrate_
 
 _php artisan db:seed_
 
+_php artisan test_
+
+_npm test_
+
 
 # About this version
 
-**0.1.0**
+**0.1.1**
 
 Project under development.
-Currently, only the product list is available.
+Currently, Product C.R.U.D. *back* and product list *front* are available.
