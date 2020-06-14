@@ -2,12 +2,7 @@
 
 exports[`Product test snapshot 1`] = `
 <div
-  className="text-center card"
-  style={
-    Object {
-      "width": "18rem",
-    }
-  }
+  className="col-sm-4 text-center card"
 >
   <img
     className="card-img-top"
@@ -26,12 +21,36 @@ exports[`Product test snapshot 1`] = `
     >
       Some quick example text to build on the card title and make up the bulk of the card's content.
     </p>
+    <p
+      className="card-text"
+    >
+      R$ 
+      <strong />
+    </p>
     <button
-      className="btn btn-primary"
+      className="btn btn-success"
       disabled={false}
+      id="add"
       type="button"
     >
-      Go somewhere
+      <strong>
+        +
+      </strong>
+    </button>
+    <span
+      id="subTotal"
+    >
+       0 
+    </span>
+    <button
+      className="btn btn-danger"
+      disabled={false}
+      id="remove"
+      type="button"
+    >
+      <strong>
+        -
+      </strong>
     </button>
   </div>
 </div>

@@ -25,12 +25,12 @@ class ProductList extends Component {
         
         return (
             <div className='container py-4'>
-                <div className='row justify-content-center'>
-                    <h2>Produtos</h2>
+                <div className="input-group mb-3">
+                    <input type="text" className="form-control" placeholder="buscar produto" />
                 </div>
                 <div className='row justify-content-center'>
                     { products.map(product => (
-                        <ProductCard key={product.id} productName={product.name} productImage={`images/${product.pic}`} />                        
+                        <ProductCard key={product.id} productName={product.name} productImage={`images/${product.pic}`} productPrice={ product.price} />                        
                     ))}
                 </div>                
             </div>
