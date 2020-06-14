@@ -70632,6 +70632,7 @@ var ProductList = /*#__PURE__*/function (_Component) {
     _this.state = {
       products: []
     };
+    _this.handleSearch = _this.handleSearch.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -70647,18 +70648,30 @@ var ProductList = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
+    key: "handleSearch",
+    value: function handleSearch(event) {
+      this.setState({
+        searchVal: event.target.value
+      });
+      console.log(this.state.searchVal);
+    }
+  }, {
     key: "render",
     value: function render() {
       var products = this.state.products;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      var searchInputBox = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "text",
+        className: "form-control",
+        placeholder: "buscar produto",
+        id: "searchFor",
+        value: this.state.seachVal,
+        onChange: this.handleSearch
+      });
+      if (products.length > 0) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container py-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "input-group mb-3"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "text",
-        className: "form-control",
-        placeholder: "buscar produto"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, searchInputBox), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row justify-content-center"
       }, products.map(function (product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ProductCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -70667,7 +70680,13 @@ var ProductList = /*#__PURE__*/function (_Component) {
           productImage: "images/".concat(product.pic),
           productPrice: product.price
         });
-      })));
+      })));else return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container py-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "input-group mb-3"
+      }, searchInputBox), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row justify-content-center"
+      }, "N\xE3o h\xE1 produtos dispon\xEDveis."));
     }
   }]);
 
