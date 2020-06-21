@@ -22,6 +22,15 @@ class ProductController extends Controller
         return response()->json($product,200);
     }
 
+    public function search(Request $request)
+    {
+        $search = Product::where('status','A')
+            ->where("name","like","%$request->productName%")
+            ->orderBy('name','ASC')
+            ->get();
+        return response()->json($search,200);        
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([

@@ -91,5 +91,37 @@ class ProductTest extends TestCase
         $response = $this->json('DELETE', '/api/produtos/999')
             ->assertStatus(404);     
     }
+
+    public function testCanISearchByName()
+    {
+        factory(Product::class,1)->create(['name' => 'Pão de metro']);
+        factory(Product::class,1)->create(['name' => 'Pão de mel']);
+        factory(Product::class,1)->create(['name' => 'Pão de queijo']);
+        factory(Product::class,1)->create(['name' => 'broa']);
+
+        $data = ['productName' => "Broa"];
+        $content = $this->json('POST', '/api/produtos/buscar/',$data)
+            ->getContent();        
+        $json_arr = json_decode($content,true);
+        $this->assertCount(1, $json_arr);
+
+        $data['productName'] = 'pão';
+        $content = $this->json('POST', '/api/produtos/buscar/',$data)
+            ->getContent();
+        $json_arr = json_decode($content,true);        
+        $this->assertCount(3, $json_arr);
+
+        $data['productName'] = 'café';
+        $content = $this->json('POST', '/api/produtos/buscar/',$data)
+            ->getContent();
+        $json_arr = json_decode($content,true);        
+        $this->assertCount(0, $json_arr);
+
+        $data['productName'] = '';
+        $content = $this->json('POST', '/api/produtos/buscar/',$data)
+            ->getContent();
+        $json_arr = json_decode($content,true);        
+        $this->assertCount(4, $json_arr);
+    }
     
 }

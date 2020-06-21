@@ -17,7 +17,15 @@ _npm test_
 
 # About this version
 
-**0.1.1**
+**0.1.2**
 
-Project under development.
-Currently, Product C.R.U.D. *back* and product list *front* are available.
+Project under development, currently we have following modules available:
+
+Backend
+- Product C.R.U.D.
+- Product search by name
+- List all products
+
+Frontend 
+- Product list
+- Product dynamic search

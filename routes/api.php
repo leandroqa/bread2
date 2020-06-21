@@ -24,3 +24,4 @@ Route::get('produtos/{product}', 'ProductController@show')->name('products.show'
 Route::post('produtos/gravar', 'ProductController@store')->name('products.store');
 Route::put('produtos/{product}', 'ProductController@update')->name('products.update');
 Route::delete('produtos/{product}', 'ProductController@delete')->name('products.delete');
+Route::post('produtos/buscar','ProductController@search')->name('products.search');
