@@ -25,6 +25,7 @@ Backend
 - Product C.R.U.D.
 - Product search by name
 - List all products
+
 Frontend 
 - Product list
 - Product dynamic search
