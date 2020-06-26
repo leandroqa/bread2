@@ -3,10 +3,11 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import './Card.css'
 
 export default function ProductCard({productName, productImage, productPrice}) {
     return (
-            <Card className="col-sm-4 text-center">
+            <Card className="Card text-center">
                 <Card.Img variant="top" src={ productImage } />
                 <Card.Body>
                     <Card.Title>{ productName }</Card.Title>
