@@ -83,6 +83,7 @@ class ProductList extends React.Component {
                     <ProductCard 
                         key={product.id} 
                         productName={product.name} 
+                        productDescription={product.description}
                         productImage={`images/${product.pic}`} 
                         productPrice={product.price}
                     />

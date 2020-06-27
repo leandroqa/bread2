@@ -5,15 +5,15 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './Card.css'
 
-export default function ProductCard({productName, productImage, productPrice}) {
+export default function ProductCard({productName, productDescription, productImage, productPrice}) {
+    //console.warn(productDescription.split())
     return (
             <Card className="Card text-center">
                 <Card.Img variant="top" src={ productImage } />
                 <Card.Body>
                     <Card.Title>{ productName }</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.                        
+                        {productDescription}                        
                     </Card.Text>
                     <Card.Text>
                         R$ <strong>{ productPrice }</strong>                        
