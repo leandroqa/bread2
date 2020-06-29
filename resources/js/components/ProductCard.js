@@ -4,7 +4,8 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-export default function ProductCard({productName, productImage, productPrice}) {
+export default function ProductCard({productName, productDescription, productImage, productPrice}) {
+    //console.warn(productDescription.split())
     return (
         <Card style={{
             display: 'flex',
