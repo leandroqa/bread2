@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ProductList from '../components/ProductList'
+//import ProductList from '../components/ProductList'
 
 //mock search axios getter
 

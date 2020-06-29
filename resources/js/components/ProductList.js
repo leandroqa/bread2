@@ -77,9 +77,18 @@ class ProductList extends React.Component {
         const { products } = this.state
         let prods = <p>Não há produtos disponíveis.</p>;
         if (this.state.products.length) {
-            prods = products.map(product => (
-                <ProductCard key={product.id} productName={product.name} productImage={`images/${product.pic}`} productPrice={product.price} />
-            ))
+            prods = products.map(function(product){
+                return (
+                    <ProductCard 
+                        key={product.id} 
+                        productName={product.name} 
+                        productDescription={product.description}
+                        productImage={`images/${product.pic}`} 
+                        productPrice={product.price}
+                    />
+                )
+            }
+            )
         }
         return prods;
     }
@@ -92,9 +101,14 @@ class ProductList extends React.Component {
                     <div className="input-group mb-3">
                         {searchInputBox}
                     </div>
-                    <div className='row justify-content-center'>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexFlow: 'row wrap'}}
+                    >
                         {this.renderProducts}
-                    </div>                
+                    </div>                  
                 </div>
         )                                    
     }
