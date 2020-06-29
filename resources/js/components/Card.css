@@ -1,0 +1,16 @@
+.Card {
+  display: flex;
+  width: 260px;
+  height: 420px;
+  border: 1px solid lightgray;
+  margin: 4px;
+  padding: 2px;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.deck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
