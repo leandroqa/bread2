@@ -3,7 +3,6 @@
 import axios from 'axios'
 import React from 'react'
 import ProductCard from './ProductCard'
-import './Card.css'
 
 class ProductList extends React.Component {
     constructor(props) {
@@ -101,7 +100,12 @@ class ProductList extends React.Component {
                     <div className="input-group mb-3">
                         {searchInputBox}
                     </div>
-                    <div className="deck">
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexFlow: 'row wrap'}}
+                    >
                         {this.renderProducts}
                     </div>                  
                 </div>
